@@ -11,7 +11,7 @@ class home extends StatelessWidget {
       body: TextButton(
         child: Text('mypage'),
         onPressed: (){
-          Get.to(() => mypage);
+          Get.to(() => mypage());
         },
       )
     );
