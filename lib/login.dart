@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:turning/signin.dart';
 import 'mypage.dart';
 
 class login extends StatefulWidget {
@@ -15,9 +16,9 @@ class _loginState extends State<login> {
     return Scaffold(
         body: Center(
           child: TextButton(
-            child: Text('mypage'),
+            child: Text('signin'),
             onPressed: (){
-              Get.to(() => mypage());
+              Get.to(() => signin());
             },
           )
         ),
