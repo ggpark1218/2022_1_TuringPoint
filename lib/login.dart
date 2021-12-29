@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'mypage.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -10,6 +12,15 @@ class login extends StatefulWidget {
 class _loginState extends State<login> {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Scaffold(
+        body: Center(
+          child: TextButton(
+            child: Text('mypage'),
+            onPressed: (){
+              Get.to(() => mypage());
+            },
+          )
+        ),
+    );
   }
 }

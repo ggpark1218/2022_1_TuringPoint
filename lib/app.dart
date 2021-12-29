@@ -26,8 +26,9 @@ class app extends StatelessWidget {
         title: 'Shrine',
         home: const home(),
         initialRoute: '/login',
-        // routes: {
-        //   '/login' : (context) => login(),
+        routes: {
+          '/login': (context) => login(),
+        }
         //   '/mypage' : (context) => const mypage(),
         //   '/signin' : (context) => const signin(),
         //   '/display' : (context) => const display(),
