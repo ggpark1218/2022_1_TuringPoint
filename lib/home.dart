@@ -7,8 +7,8 @@ class home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      child: TextButton(
+    return Scaffold(
+      body: TextButton(
         child: Text('mypage'),
         onPressed: (){
           Get.to(() => mypage);
