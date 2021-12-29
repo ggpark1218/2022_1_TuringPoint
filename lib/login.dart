@@ -15,12 +15,23 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: Center(
-          child: TextButton(
-            child: Text('signin'),
-            onPressed: (){
-              Get.to(() => signin());
-            },
-          )
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                child: Text('signin'),
+                onPressed: (){
+                  Get.to(() => signin());
+                },
+              ),
+              TextButton(
+                child: Text('mypage'),
+                onPressed: (){
+                  Get.to(() => mypage());
+                },
+              )
+            ],
+          ),
         ),
     );
   }
