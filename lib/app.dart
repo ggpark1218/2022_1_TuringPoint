@@ -13,6 +13,7 @@ import 'home.dart';
 import 'login.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'mypage.dart';
 
@@ -21,7 +22,7 @@ class app extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
         title: 'Shrine',
         home: const home(),
         initialRoute: '/login',
