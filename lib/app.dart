@@ -18,8 +18,8 @@ import 'package:get/get.dart';
 
 import 'mypage.dart';
 
-class app extends StatelessWidget {
-  const app({Key? key}) : super(key: key);
+class CatchApp extends StatelessWidget {
+  const CatchApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
