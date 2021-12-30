@@ -18,7 +18,7 @@ class _loginState extends State<login> {
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
         children: [
-          const SizedBox(height: 60.0),
+          const SizedBox(height: 50.0),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -27,6 +27,7 @@ class _loginState extends State<login> {
               const Text('Log in',
                 style: TextStyle(
                   fontSize: 30.0,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
             ],
@@ -36,7 +37,7 @@ class _loginState extends State<login> {
           const TextField(
             decoration: InputDecoration(
               filled: true,
-              labelText: 'Username',
+              labelText: 'Email',
             ),
           ),
           const SizedBox(height: 14.0),
@@ -52,7 +53,13 @@ class _loginState extends State<login> {
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
-              Text("Forgot Password?"),
+              TextButton(onPressed: () {  },
+                  child:const Text("Forgot Password?",
+                  style: TextStyle(
+                    color: Colors.blueGrey,
+                  ),),
+                style: TextButton.styleFrom(padding: EdgeInsets.zero,),
+              ),
             ],
           ),
           const SizedBox(height: 20.0),
@@ -67,7 +74,8 @@ class _loginState extends State<login> {
                     });
                   }
               ),
-              Text("Remember me"),
+              Text("Remember me",
+              ),
             ],
           ),
           ElevatedButton(
