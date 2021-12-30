@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:camera/camera.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'audio/audio.dart';
 import 'Models/foundPeople/home.dart';
 import 'main.dart';
 import 'mypage.dart';
@@ -34,6 +35,12 @@ class _homeState extends State<home> {
             child: Text('mypage'),
             onPressed: () {
               Get.to(() => mypage(cameras));
+            },
+          ),
+          TextButton(
+            child: Text('samplemodel'),
+            onPressed: () {
+              Get.to(() => audio());
             },
           ),
           Container(
