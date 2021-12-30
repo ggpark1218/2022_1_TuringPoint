@@ -2,8 +2,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:camera/camera.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-import 'ModelContainer.dart';
+import 'Models/foundPeople/home.dart';
+import 'main.dart';
 import 'mypage.dart';
 
 //import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
@@ -14,6 +16,9 @@ List func = [false, false, false, false, false, false, false, false];
 
 class home extends StatefulWidget {
   //const home({Key? key}) : super(key: key);
+  late final List<CameraDescription> cameras;
+
+  home(this.cameras);
 
   @override
   State<home> createState() => _homeState();
@@ -23,19 +28,90 @@ class _homeState extends State<home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-        title: Text('Home',
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {  },
-            icon: Icon(Icons.help_outline),
-
+      body: ListView(
+        children: [
+          TextButton(
+            child: Text('mypage'),
+            onPressed: () {
+              Get.to(() => mypage(cameras));
+            },
           ),
-          IconButton(
-            onPressed: () {  },
-            icon: Icon(Icons.account_circle),
+          Container(
+            padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+            child: Column(
+
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[0]=!func[0];
+                          });
+                        },
+                            icon: Icon(Icons.directions_car,
+                                color: func[0]?Colors.blue:Colors.black
+                            )),
+                        Text('구급차'),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[1]=!func[1];
+                          });
+
+                        },
+                            icon: Icon(Icons.pets,
+                                color: func[1]?Colors.blue:Colors.black
+                            )),
+                        Text('동물')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          Get.to(HomePage(cameras));
+                          setState(() {
+                            func[2]=!func[2];
+                          });
+                        },
+                            icon: Icon(Icons.directions_walk,
+                                color: func[2]?Colors.blue:Colors.black
+                            )),
+                        Text('사람')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[3]=!func[3];
+                          });
+
+                        },
+                            icon: Icon(Icons.pedal_bike,
+                                color: func[3]?Colors.blue:Colors.black
+                            )),
+                        Text('교통수')
+                      ],
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[4]=!func[4];
+                          });
+
 
           ),
         ],
