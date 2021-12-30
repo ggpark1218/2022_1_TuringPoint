@@ -2,9 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'mypage.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class home extends StatelessWidget {
-  const home({Key? key}) : super(key: key);
+List func=[false,false,false,false,false,false,false,false];
+
+class home extends StatefulWidget {
+  //const home({Key? key}) : super(key: key);
+
+  @override
+  State<home> createState() => _homeState();
+}
+
+class _homeState extends State<home> {
+
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +30,136 @@ class home extends StatelessWidget {
           Container(
             padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
             child: Column(
+
               children: [
-                Text('Model 추천 - version1', style: TextStyle(fontWeight: FontWeight.w600)),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  //crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[0]=!func[0];
+                          });
+
+                        },
+                            icon: Icon(Icons.directions_car,
+                                color: func[0]?Colors.blue:Colors.black
+                            )),
+                        Text('구급차'),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[1]=!func[1];
+                          });
+
+                        },
+                            icon: Icon(Icons.pets,
+                                color: func[1]?Colors.blue:Colors.black
+                            )),
+                        Text('동물')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[2]=!func[2];
+                          });
+
+                        },
+                            icon: Icon(Icons.directions_walk,
+                                color: func[2]?Colors.blue:Colors.black
+                            )),
+                        Text('사람')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[3]=!func[3];
+                          });
+
+                        },
+                            icon: Icon(Icons.pedal_bike,
+                                color: func[3]?Colors.blue:Colors.black
+                            )),
+                        Text('교통수')
+                      ],
+                    )
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[4]=!func[4];
+                          });
+
+                        },
+                            icon: Icon(Icons.escalator_warning,
+                                color: func[4]?Colors.blue:Colors.black
+                            )),
+                        Text('어린이')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[5]=!func[5];
+                          });
+
+                        },
+                            icon: Icon(Icons.phonelink_erase,
+                                color: func[5]?Colors.blue:Colors.black
+                            )),
+                        Text('휴대폰')
+                      ],
+                    ),
+                    Column(
+                      children: [
+
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[6]=!func[6];
+                          });
+
+                        },
+                            icon: Icon(Icons.mode_night,
+                                color: func[6]?Colors.blue:Colors.black
+                            )),
+                        Text('졸음')
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        IconButton(onPressed: () {
+                          setState(() {
+                            func[7]=!func[7];
+                          });
+
+                        },
+                            icon: Icon(Icons.mode_night,
+                                color: func[7]?Colors.blue:Colors.black
+                            )),
+
+                        Text('보류')
+                     ],
+                    )
+                  ],
+                ),
+
+                Text('Model 추천 - version1',
+                    style: TextStyle(fontWeight: FontWeight.w600)),
                 SingleChildScrollView(
                   physics: BouncingScrollPhysics(),
                   scrollDirection: Axis.horizontal,
@@ -34,7 +172,10 @@ class home extends StatelessWidget {
                           Container(
                             width: 150,
                             margin: EdgeInsets.only(right: 10),
-                            height: MediaQuery.of(context).size.height * 0.30 - 50,
+                            height: MediaQuery
+                                .of(context)
+                                .size
+                                .height * 0.30 - 50,
                             child: Card(
                               elevation: 10,
                               borderOnForeground: true,
@@ -78,7 +219,10 @@ class home extends StatelessWidget {
                           Container(
                             width: 150,
                             margin: EdgeInsets.only(right: 10),
-                            height: MediaQuery.of(context).size.height * 0.30 - 50,
+                            height: MediaQuery
+                                .of(context)
+                                .size
+                                .height * 0.30 - 50,
                             child: Card(
                               elevation: 10,
                               borderOnForeground: true,
@@ -122,7 +266,10 @@ class home extends StatelessWidget {
                           Container(
                             width: 150,
                             margin: EdgeInsets.only(right: 20),
-                            height: MediaQuery.of(context).size.height * 0.30 - 50,
+                            height: MediaQuery
+                                .of(context)
+                                .size
+                                .height * 0.30 - 50,
                             child: Card(
                               elevation: 10,
                               borderOnForeground: true,
@@ -168,9 +315,10 @@ class home extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height:30),
+                SizedBox(height: 30),
 
-                Text('Model 추천 - version2', style: TextStyle(fontWeight: FontWeight.w600)),
+                Text('Model 추천 - version2',
+                    style: TextStyle(fontWeight: FontWeight.w600)),
                 CarouselSlider(
                   options: CarouselOptions(
                     autoPlay: true,

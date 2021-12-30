@@ -28,7 +28,7 @@ class app extends StatelessWidget {
       builder: () {
         return GetMaterialApp(
             title: 'Shrine',
-            home: const home(),
+            home: home(),
             initialRoute: '/login',
             routes: {
               '/login': (context) => login(),
