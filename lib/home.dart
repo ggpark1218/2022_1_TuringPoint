@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'audio/audio.dart';
 import 'mypage.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
@@ -25,6 +26,12 @@ class _homeState extends State<home> {
             child: Text('mypage'),
             onPressed: () {
               Get.to(() => mypage());
+            },
+          ),
+          TextButton(
+            child: Text('samplemodel'),
+            onPressed: () {
+              Get.to(() => audio());
             },
           ),
           Container(
