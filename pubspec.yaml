@@ -38,7 +38,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   google_fonts: ^2.0.0
   flutter_screenutil: ^5.0.2
-
+  material_design_icons_flutter: ^5.0.6595
+  list_wheel_scroll_view_x: ^0.0.2
 
 dev_dependencies:
   flutter_test:
@@ -80,12 +81,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
-  #       - asset: fonts/Schyler-Italic.ttf
-  #         style: italic
+  fonts:
+    - family: Millimetre
+      fonts:
+        - asset: assets/fonts/Millimetre-Bold.otf
+        - asset: assets/fonts/Millimetre-Regular.otf
   #   - family: Trajan Pro
   #     fonts:
   #       - asset: fonts/TrajanPro.ttf
