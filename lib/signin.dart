@@ -117,7 +117,7 @@ class _signinState extends State<signin> {
                   // you'd often call a server or save the information in a database.
                   ScaffoldMessenger.of(context)
                       .showSnackBar(SnackBar(content: Text('Processing Data')));
-                  Navigator.pop(context);
+                  Navigator.pushNamed(context,'/mypage');
                 }
 
 
@@ -125,7 +125,7 @@ class _signinState extends State<signin> {
             ),
             Text('Already have an account?'),
             TextButton(onPressed: (){
-
+              Navigator.pop(context);
             },
                 child: Text('Log in'))
 
