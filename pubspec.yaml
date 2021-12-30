@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^2.1.1
   flutter_screenutil: ^5.0.2
   material_design_icons_flutter: ^5.0.6595
+  list_wheel_scroll_view_x: ^0.0.2
 
 dev_dependencies:
   flutter_test:
