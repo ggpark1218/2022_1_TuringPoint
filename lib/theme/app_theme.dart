@@ -11,7 +11,7 @@ class AppTheme{
     headline3: AppTextStyle.headline3,
     subtitle1: AppTextStyle.subtitle1,
     bodyText1: AppTextStyle.body1,
-
+    button: AppTextStyle.button,
   );
 
   static const ColorScheme _colorScheme = ColorScheme.light(
@@ -27,16 +27,18 @@ class AppTheme{
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((states){
           if(states.contains(MaterialState.disabled)){
-            return Colors.white;
+            return AppColors.onPrimary;
           }
           return AppColors.primary;
       }),
-        minimumSize: MaterialStateProperty.all(Size(705,120)),
+        //minimumSize: MaterialStateProperty.all(const Size(700,120)),
         textStyle: MaterialStateProperty.all(
-            AppTextStyle.body1,
+            AppTextStyle.button,
         ),
         foregroundColor: MaterialStateProperty.all(
-            Colors.white),
+            AppColors.onPrimary
+        ),
+
       ),
     ),
 
@@ -44,9 +46,9 @@ class AppTheme{
       style: ButtonStyle(
         foregroundColor: MaterialStateProperty.resolveWith((states){
           if(states.contains(MaterialState.disabled)){
-            return Colors.white;
+            return AppColors.onPrimary;
           }
-          return AppColors.primary;
+          return AppColors.secondary;
       }),
         textStyle: MaterialStateProperty.all(
           AppTextStyle.body1,
@@ -54,14 +56,18 @@ class AppTheme{
       ),
     ),
 
-    outlinedButtonTheme: OutlinedButtonThemeData(
-        style: ButtonStyle(
-            foregroundColor: MaterialStateProperty.all(AppColors.primary[400]),
-          textStyle: MaterialStateProperty.all(AppTextStyle.body1),
-          minimumSize: MaterialStateProperty.all(Size(400,120)),
-          side: MaterialStateProperty.all(BorderSide(color: AppColors.primary)),
-        ),
-    ),
+    // outlinedButtonTheme: OutlinedButtonThemeData(
+    //     style: ButtonStyle(
+    //         foregroundColor: MaterialStateProperty.all(AppColors.primary[400]),
+    //       textStyle: MaterialStateProperty.all(
+    //           AppTextStyle.body1
+    //       ),
+    //       minimumSize: MaterialStateProperty.all(Size(400,120)),
+    //       side: MaterialStateProperty.all(BorderSide(color: AppColors.primary)),
+    //     ),
+    // ),
+
+
   );
   
 

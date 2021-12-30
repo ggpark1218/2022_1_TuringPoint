@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:turning/signin.dart';
+import 'package:turning/theme/app_colors.dart';
 import 'home.dart';
 import 'mypage.dart';
 //import 'package:turning.dart';
+import 'package:turning/theme/app_theme.dart';
+import 'package:turning/theme/app_text_styles.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -13,10 +16,15 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
+  TextEditingController emailController = TextEditingController (text: '');
+  TextEditingController passwordController = TextEditingController (text: '');
+
   bool _isChecked = false;
+
   @override
   Widget build(BuildContext context) {
-    var textTheme = Theme.of(context).textTheme;
+    TextTheme textTheme = Theme.of(context).textTheme;
+
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -34,20 +42,45 @@ class _loginState extends State<login> {
           ),
           const SizedBox(height: 35.0),
           Text("Email*"),
-          const TextField(
-            decoration: InputDecoration(
-              filled: true,
-              labelText: 'Email',
-            ),
+          Stack(
+            children: [
+              TextFormField(
+                controller: emailController,
+                keyboardType: TextInputType.phone,
+                decoration: InputDecoration(
+                  //filled: true,
+                  //labelText: 'Email',
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 14,
+                  ),
+                  border: OutlineInputBorder(
+                      borderSide: BorderSide(
+                          color: AppColors.primary!)),
+                  hintText: '이메일을 입력해주세요!',
+                ),
+              ),
+            ]
           ),
           const SizedBox(height: 14.0),
           Text("Password*"),
-          const TextField(
-            decoration: InputDecoration(
-              filled: true,
-              labelText: 'Password',
-            ),
-            obscureText: true,
+          Stack(
+              children: [
+                TextFormField(
+                  controller: passwordController,
+                  keyboardType: TextInputType.phone,
+                  decoration: InputDecoration(
+                    contentPadding: const EdgeInsets.symmetric(
+                      horizontal: 20,
+                      vertical: 14,
+                    ),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide(
+                            color: AppColors.primary!)),
+                    hintText: '비밀번호 입력해주세요!',
+                  ),
+                ),
+              ]
           ),
           const SizedBox(height: 5.0),
           Column(
