@@ -29,23 +29,27 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  provider: ^6.0.2
+  provider: ^6.0.1
   get: ^4.6.1
   carousel_slider: ^4.0.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.4
-  google_fonts: ^2.1.1
+  cupertino_icons: ^1.0.2
+  google_fonts: ^2.0.0
   flutter_screenutil: ^5.0.2
   material_design_icons_flutter: ^5.0.6595
   tflite_flutter: ^0.9.0
   tflite_flutter_helper: ^0.3.1
   random_color: ^1.0.6-nullsafety
+  list_wheel_scroll_view_x: ^0.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+
+  camera: ^0.9.4+5
+  tflite: ^1.1.2
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is
@@ -81,7 +85,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Millimetre
       fonts:
         - asset: assets/fonts/Millimetre-Bold.otf
         - asset: assets/fonts/Millimetre-Regular.otf

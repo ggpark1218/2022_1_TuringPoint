@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
+import 'package:camera/camera.dart';
 import 'MyPage/announcement.dart';
 import 'MyPAge/care.dart';
 import 'MyPage/customer_service.dart';
@@ -9,9 +9,12 @@ import 'MyPage/parking.dart';
 import 'MyPage/profile.dart';
 import 'MyPage/setting.dart';
 import 'login.dart';
+import 'main.dart';
 
 class mypage extends StatefulWidget {
-  const mypage({Key? key}) : super(key: key);
+  final List<CameraDescription> cameras;
+
+  mypage(this.cameras);
 
   @override
   _mypageState createState() => _mypageState();
@@ -145,7 +148,7 @@ class _mypageState extends State<mypage> {
           ListTile(
             title: Text('로그아웃'),
             onTap: (){
-              Get.offAll(() => login());
+              Get.offAll(() => login(cameras));
             },
           ),
         ],

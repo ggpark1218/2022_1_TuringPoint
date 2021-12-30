@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:turning/signin.dart';
+import 'package:turning/theme/app_theme.dart';
 
 import 'MyPage/announcement.dart';
 import 'MyPage/care.dart';
@@ -14,12 +15,15 @@ import 'home.dart';
 import 'login.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'package:get/get.dart';
 
 import 'mypage.dart';
 
 class CatchApp extends StatelessWidget {
-  const CatchApp({Key? key}) : super(key: key);
+  final List<CameraDescription> cameras;
+
+  CatchApp(this.cameras);
 
   @override
   Widget build(BuildContext context) {
@@ -27,12 +31,12 @@ class CatchApp extends StatelessWidget {
       designSize: const Size(828, 1792),
       builder: () {
         return GetMaterialApp(
+            theme: AppTheme.regularTheme,
             title: 'Shrine',
-            home: home(),
+            home: home(cameras),
             initialRoute: '/login',
             routes: {
-              '/login': (context) => login(),
-              '/mypage' : (context) =>  mypage(),
+              '/login': (context) => login(cameras),
             }
 
           //   '/signin' : (context) => const signin(),
