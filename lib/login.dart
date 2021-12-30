@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:turning/signin.dart';
+import 'home.dart';
 import 'mypage.dart';
 
 class login extends StatefulWidget {
@@ -79,7 +80,9 @@ class _loginState extends State<login> {
             ],
           ),
           ElevatedButton(
-            onPressed: () {  },
+            onPressed: () {
+              Get.to(() => home());
+            },
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueGrey),),
             child: const Text("Log in",
             style: TextStyle(
