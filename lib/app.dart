@@ -18,8 +18,8 @@ import 'package:get/get.dart';
 
 import 'mypage.dart';
 
-class app extends StatelessWidget {
-  const app({Key? key}) : super(key: key);
+class CatchApp extends StatelessWidget {
+  const CatchApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class app extends StatelessWidget {
       builder: () {
         return GetMaterialApp(
             title: 'Shrine',
-            home: const home(),
+            home: home(),
             initialRoute: '/login',
             routes: {
               '/login': (context) => login(),

@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 //eunnjin
+
+
+bool passobscure=true;
+bool passobscure2=true;
+
 class signin extends StatefulWidget {
   const signin({Key? key}) : super(key: key);
 
@@ -79,7 +84,28 @@ class _signinState extends State<signin> {
             Text('Password'),
             TextFormField(
               controller: _passwordController,
-              decoration: const InputDecoration(
+              decoration: InputDecoration(
+             suffixIcon: Row(
+               mainAxisAlignment: MainAxisAlignment.spaceBetween, // added line
+               mainAxisSize: MainAxisSize.min, // added line
+               children: <Widget>[
+                 IconButton(
+                   icon: passobscure?Icon(Icons.visibility_off):Icon(Icons.visibility),
+                   onPressed: () {
+                     setState(() {
+                       passobscure=!passobscure;
+                     });
+                   },
+                 ),
+                 // IconButton(
+                 //   icon: Icon(snapshot.data
+                 //       ? Icons.visibility
+                 //       : Icons.visibility_off),
+                 //   onPressed: _authBloc.switchObscureTextMode,
+                 // ),
+               ],
+
+              ),
                 filled: true,
                 labelText: 'at last 9 characters',
               ),
@@ -90,13 +116,30 @@ class _signinState extends State<signin> {
                 return null;
               },
 
-              obscureText: true,
+              obscureText:passobscure? true:false,
             ),
             const SizedBox(height: 20.0),
             Text('Reapeat Password'),
             TextFormField(
+
               controller: _repeatpasswordController,
-              decoration: const InputDecoration(
+              decoration:  InputDecoration(
+                suffixIcon: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, // added line
+                  mainAxisSize: MainAxisSize.min, // added line
+                  children: <Widget>[
+                    IconButton(
+                      icon: passobscure2?Icon(Icons.visibility_off):Icon(Icons.visibility),
+                      onPressed: () {
+                        setState(() {
+                          passobscure2=!passobscure2;
+                        });
+                      },
+                    ),
+
+                  ],
+
+                ),
                 filled: true,
                 labelText: '',
               ),
@@ -106,7 +149,7 @@ class _signinState extends State<signin> {
                 }
                 return null;
               },
-              obscureText: true,
+              obscureText: passobscure2?true:false,
             ),
             ElevatedButton(
               child: const Text('Sign up'),
