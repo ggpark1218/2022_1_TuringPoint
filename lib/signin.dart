@@ -18,6 +18,7 @@ class _signinState extends State<signin> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       // appBar:AppBar(
       //   title: Text('회원가입'),

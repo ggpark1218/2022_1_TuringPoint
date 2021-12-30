@@ -1,3 +1,4 @@
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:turning/signin.dart';
 
 import 'MyPage/announcement.dart';
@@ -22,24 +23,29 @@ class app extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp(
-        title: 'Shrine',
-        home: const home(),
-        initialRoute: '/login',
-        routes: {
-          '/login': (context) => login(),
-        }
-        //   '/mypage' : (context) => const mypage(),
-        //   '/signin' : (context) => const signin(),
-        //   '/display' : (context) => const display(),
-        //   '/announcement' : (context) => const Announcement(),
-        //   '/care' : (context) => const Care(),
-        //   '/customer_service' : (context) => const CustomerService(),
-        //   '/FAQ' : (context) => const FAQ(),
-        //   '/parking' : (context) => const Parking(),
-        //   '/profile' : (context) => const Profile(),
-        //   '/setting' : (context) => const Setting(),
-        // }
+    return ScreenUtilInit(
+      designSize: const Size(375, 812),
+      builder: () {
+        return GetMaterialApp(
+            title: 'Shrine',
+            home: const home(),
+            initialRoute: '/login',
+            routes: {
+              '/login': (context) => login(),
+            }
+          //   '/mypage' : (context) => const mypage(),
+          //   '/signin' : (context) => const signin(),
+          //   '/display' : (context) => const display(),
+          //   '/announcement' : (context) => const Announcement(),
+          //   '/care' : (context) => const Care(),
+          //   '/customer_service' : (context) => const CustomerService(),
+          //   '/FAQ' : (context) => const FAQ(),
+          //   '/parking' : (context) => const Parking(),
+          //   '/profile' : (context) => const Profile(),
+          //   '/setting' : (context) => const Setting(),
+          // }
+        );
+    },
     );
   }
 }
