@@ -13,7 +13,7 @@ void main() async {
     //   providers: [
     //   ],
      // child:
-      app(),
+      CatchApp(),
     // ),
   );
 }
