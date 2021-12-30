@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:camera/camera.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'Models/foundPeople/home.dart';
+import 'main.dart';
 import 'mypage.dart';
-import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+
 
 List func=[false,false,false,false,false,false,false,false];
 
 class home extends StatefulWidget {
   //const home({Key? key}) : super(key: key);
+  late final List<CameraDescription> cameras;
+
+  home(this.cameras);
 
   @override
   State<home> createState() => _homeState();
 }
 
 class _homeState extends State<home> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -24,7 +28,7 @@ class _homeState extends State<home> {
           TextButton(
             child: Text('mypage'),
             onPressed: () {
-              Get.to(() => mypage());
+              Get.to(() => mypage(cameras));
             },
           ),
           Container(
@@ -42,7 +46,6 @@ class _homeState extends State<home> {
                           setState(() {
                             func[0]=!func[0];
                           });
-
                         },
                             icon: Icon(Icons.directions_car,
                                 color: func[0]?Colors.blue:Colors.black
@@ -67,10 +70,10 @@ class _homeState extends State<home> {
                     Column(
                       children: [
                         IconButton(onPressed: () {
+                          Get.to(HomePage(cameras));
                           setState(() {
                             func[2]=!func[2];
                           });
-
                         },
                             icon: Icon(Icons.directions_walk,
                                 color: func[2]?Colors.blue:Colors.black

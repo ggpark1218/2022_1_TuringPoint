@@ -14,12 +14,15 @@ import 'home.dart';
 import 'login.dart';
 import 'main.dart';
 import 'package:flutter/material.dart';
+import 'package:camera/camera.dart';
 import 'package:get/get.dart';
 
 import 'mypage.dart';
 
 class CatchApp extends StatelessWidget {
-  const CatchApp({Key? key}) : super(key: key);
+  final List<CameraDescription> cameras;
+
+  CatchApp(this.cameras);
 
   @override
   Widget build(BuildContext context) {
@@ -28,11 +31,10 @@ class CatchApp extends StatelessWidget {
       builder: () {
         return GetMaterialApp(
             title: 'Shrine',
-            home: home(),
+            home: home(cameras),
             initialRoute: '/login',
             routes: {
-              '/login': (context) => login(),
-              '/mypage' : (context) =>  mypage(),
+              '/login': (context) => login(cameras),
             }
 
           //   '/signin' : (context) => const signin(),

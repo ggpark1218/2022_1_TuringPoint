@@ -1,12 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:camera/camera.dart';
 import 'package:turning/signin.dart';
 import 'home.dart';
+import 'main.dart';
 import 'mypage.dart';
 //import 'package:turning.dart';
 
 class login extends StatefulWidget {
-  const login({Key? key}) : super(key: key);
+  final List<CameraDescription> cameras;
+
+  login(this.cameras);
 
   @override
   _loginState createState() => _loginState();
@@ -80,7 +84,7 @@ class _loginState extends State<login> {
           ),
           ElevatedButton(
             onPressed: () {
-              Get.to(() => home());
+              Get.to(() => home(cameras));
             },
             style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.blueGrey),),
             child: const Text("Log in",
