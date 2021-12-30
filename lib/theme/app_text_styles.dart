@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle{
-  static TextStyle headline1 = const TextStyle(
-    fontFamily: 'Millimetre-Bold.otf',
+  static TextStyle headline1 = GoogleFonts.roboto(
+    //fontFamily: 'Millimetre-Bold.otf',
     fontWeight: FontWeight.w800,
-    fontSize: 64,
-    height: 24/64, //폰트 사이즈로 꼭 나눠줘야함
+    fontSize: 5,
+    height: 3,
     letterSpacing: 0.15
   );
 
@@ -14,15 +14,15 @@ class AppTextStyle{
       fontFamily: 'Millimetre-Bold.otf',
       fontWeight: FontWeight.w800,
       fontSize: 48,
-      height: 56/48, //폰트 사이즈로 꼭 나눠줘야함
+      height: 56/48,
       letterSpacing: 0.15
   );
 
-  static TextStyle headline3 = const TextStyle(
-      fontFamily: 'Millimetre-Regular.otf',
+  static TextStyle headline3 = GoogleFonts.roboto(
+      //fontFamily: 'Millimetre-Regular.otf',
       fontWeight: FontWeight.w500,
       fontSize: 36,
-      height: 20/36, //폰트 사이즈로 꼭 나눠줘야함
+      height: 20/36,
       letterSpacing: 0.25
   );
 
@@ -39,4 +39,12 @@ class AppTextStyle{
       height: 50/28,
       letterSpacing: 0.15
   );
+
+  static TextStyle button = GoogleFonts.roboto(
+      fontWeight: FontWeight.w700,
+      fontSize: 38,
+      height: 42/38,
+      letterSpacing: 0.15
+  );
+
 }

@@ -79,7 +79,7 @@ flutter:
   # list giving the asset and other descriptors for the font. For
   # example:
   fonts:
-    - family: Schyler
+    - family: Millimetre
       fonts:
         - asset: assets/fonts/Millimetre-Bold.otf
         - asset: assets/fonts/Millimetre-Regular.otf

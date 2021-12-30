@@ -1,5 +1,6 @@
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:turning/signin.dart';
+import 'package:turning/theme/app_theme.dart';
 
 import 'MyPage/announcement.dart';
 import 'MyPage/care.dart';
@@ -27,6 +28,7 @@ class CatchApp extends StatelessWidget {
       designSize: const Size(828, 1792),
       builder: () {
         return GetMaterialApp(
+            theme: AppTheme.regularTheme,
             title: 'Shrine',
             home: home(),
             initialRoute: '/login',
