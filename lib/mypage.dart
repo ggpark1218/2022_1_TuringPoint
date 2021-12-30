@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'MyPage/announcement.dart';
-import 'MyPage/care.dart';
+import 'MyPAge/care.dart';
 import 'MyPage/customer_service.dart';
 import 'MyPage/FAQ.dart';
 import 'MyPage/parking.dart';
@@ -20,54 +21,134 @@ class _mypageState extends State<mypage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
-      body: Container(
-        child: Expanded(
-          child: Column(
-            children: [
-              Card(
-                child: InkWell(
-                  onTap: () {
-                    Get.to(Announcement());
-                  },
-                  child: Text('자주 묻는 질문')
-                ),
-              ),
-              Card(
-                child: InkWell(
-                    onTap: () {
-                      Get.to(Care());
+      body: ListView(
+        children: [
+          Expanded(
+            child: Container(
+              padding: EdgeInsets.fromLTRB(10, 20, 10, 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    height: 50,
+                    width: 50,
+                    child: ClipOval(
+                      child: Image.network('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*'),
+                    ),
+                  ),
+                  SizedBox(width: 15),
+                  Container(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text('소망붕붕',
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                        Text('그랜저 11바 1111')
+                      ],
+                    ),
+                  ),
+                  Expanded(
+                    child: Container(),
+                  ),
+                  IconButton(
+                    onPressed: () {
+                      Get.to(Profile());
                     },
-                    child: Text('고객센터')
-                ),
+                    icon: Icon(Icons.arrow_back_ios_outlined),
+                  ),
+                ],
               ),
-              Card(
-                child: InkWell(
-                    onTap: () {
-                      Get.to(CustomerService());
-                    },
-                    child: Text('공지사항')
-                ),
-              ),
-              Card(
-                child: InkWell(
-                    onTap: () {
-                      Get.to(Setting());
-                    },
-                    child: Text('앱 설정')
-                ),
-              ),
-              Card(
-                child: InkWell(
-                    onTap: () {
-                      Get.offAll(() => login());
-                    },
-                    child: Text('로그아웃')
-                ),
-              ),
-              ]
             ),
-        ),
+          ),
+          Container(
+            padding: EdgeInsets.fromLTRB(30, 20, 10, 10),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        child: ClipOval(
+                          child: Image.network('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*'),
+                        ),
+                      ),
+                      Text('차 상태관리'),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 40),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        child: ClipOval(
+                          child: Image.network('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*'),
+                        ),
+                      ),
+                      Text('주차정보'),
+                    ],
+                  ),
+                ),
+                SizedBox(width: 40),
+                Container(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 70,
+                        width: 70,
+                        child: ClipOval(
+                          child: Image.network('https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/dog-puppy-on-garden-royalty-free-image-1586966191.jpg?crop=0.752xw:1.00xh;0.175xw,0&resize=640:*'),
+                        ),
+                      ),
+                      Text('로그 (보류)'),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ),
+          Divider(),
+          ListTile(
+            title: Text('자주 묻는 질문'),
+            onTap: (){
+              Get.to(Announcement());
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('고객센터'),
+            onTap: (){
+              Get.to(CustomerService());
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('공지사항'),
+            onTap: (){
+              Get.to(CustomerService());
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('앱 설정'),
+            onTap: (){
+              Get.to(CustomerService());
+            },
+          ),
+          Divider(),
+          ListTile(
+            title: Text('로그아웃'),
+            onTap: (){
+              Get.offAll(() => login());
+            },
+          ),
+        ],
       ),
     );
   }
