@@ -7,6 +7,10 @@ class AppTheme{
 
   static final TextTheme _regularTextTheme = TextTheme(
     headline1: AppTextStyle.headline1,
+    headline2: AppTextStyle.headline2,
+    headline3: AppTextStyle.headline3,
+    subtitle1: AppTextStyle.subtitle1,
+    bodyText1: AppTextStyle.body1,
 
   );
 
@@ -18,7 +22,7 @@ class AppTheme{
   static final ThemeData regularTheme = ThemeData(
     colorScheme: _colorScheme,
     textTheme: _regularTextTheme,
-    
+
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith((states){

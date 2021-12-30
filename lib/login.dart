@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:turning/signin.dart';
 import 'home.dart';
 import 'mypage.dart';
+//import 'package:turning.dart';
 
 class login extends StatefulWidget {
   const login({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class _loginState extends State<login> {
   bool _isChecked = false;
   @override
   Widget build(BuildContext context) {
+    var textTheme = Theme.of(context).textTheme;
     return Scaffold(
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 30.0),
@@ -25,11 +27,8 @@ class _loginState extends State<login> {
             children: [
               Image.asset('assets/images/google_logo.png'),
               const SizedBox(height: 20.0),
-              const Text('Log in',
-                style: TextStyle(
-                  fontSize: 30.0,
-                  fontWeight: FontWeight.bold,
-                ),
+              Text('Log in',
+                style: textTheme.headline1,
               ),
             ],
           ),
